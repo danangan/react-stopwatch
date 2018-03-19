@@ -2,6 +2,7 @@
 const formatTime = (time) => {
     // convert to string
     const stringTime = String(time);
+    // check the length of string
     if (stringTime.length < 2) {
         return `0${stringTime}`;
     } 
