@@ -10,15 +10,17 @@ it('renders without crashing', () => {
 });
 
 test('test time formatter with time more than 1 hour', () => {
-  const time = 100000000;
-  expect(formatElapsedTime(time)).toBe('27:46:40.00');
+  expect(formatElapsedTime(100000000)).toBe('27:46:40.00');
 })
 
 test('test time formatter with time less than 1 hour', () => {
-  const time = 129100;
-  expect(formatElapsedTime(time)).toBe('02:09.10');
+  expect(formatElapsedTime(129100)).toBe('02:09.10');
 })
 
 test('test time formatter other type than number input', () => {
   expect(formatElapsedTime('some string')).toBe('00:00:00');
+  expect(formatElapsedTime(true)).toBe('00:00:00');
+  expect(formatElapsedTime({})).toBe('00:00:00');
+  expect(formatElapsedTime([])).toBe('00:00:00');
+  expect(formatElapsedTime(() => {})).toBe('00:00:00');
 })
