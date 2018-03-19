@@ -11,6 +11,11 @@ const formatTime = (time) => {
 
 
 const formatElapsedTime = (time) => {
+    // checking the type of input
+    if (typeof time !== 'number') {
+        return '00:00:00'
+    }
+
     let remainingTime = time;
     // get the hour
     const hour = Math.floor(remainingTime/3600000);

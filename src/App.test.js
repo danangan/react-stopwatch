@@ -19,3 +19,6 @@ test('test time formatter with time less than 1 hour', () => {
   expect(formatElapsedTime(time)).toBe('02:09.10');
 })
 
+test('test time formatter other type than number input', () => {
+  expect(formatElapsedTime('some string')).toBe('00:00:00');
+})
